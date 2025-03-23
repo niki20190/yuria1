@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Переводчик слов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e7e7e7;
+            border-radius: 5px;
+        }
+
+        .message {
+            font-size: 18px;
+            color: green;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Привет, Юра! Введите слово для перевода:</h1>
+    
+    <input type="text" id="searchWord" placeholder="Введите слово...">
+    <button onclick="searchWord()">Поиск</button>
+
+    <div class="result" id="result"></div>
+
+    <h2>Добавить новое слово:</h2>
+    <form id="addWordForm">
+        <input type="text" id="newWord" placeholder="Введите новое слово" required>
+        <input type="text" id="newTranslation" placeholder="Перевод" required>
+        <input type="text" id="newTranscription" placeholder="Транскрипция (по-русски)" required>
+        <button type="submit">Добавить слово</button>
+    </form>
+
+    <div class="message" id="message"></div>
+
+    <script>
+        // Изначальный список слов
+        const dictionary = {
+            // Добавляй новые слова ниже
+            "кот": { translation: "cat", transcription: "кэт" },
+            "собака": { translation: "dog", transcription: "дог" },
+            "птица": { translation: "bird", transcription: "бёрд" },
+            "дом": { translation: "house", transcription: "хаус" },
+            "книга": { translation: "book", transcription: "бук" },
+            "машина": { translation: "car", transcription: "кар" },
+            // Здесь новые слова можно добавлять
+        };
+
+        // Поиск слова в словаре
+        function searchWord() {
+            const word = document.getElementById('searchWord').value.toLowerCase();
+            const resultDiv = document.getElementById('result');
+
+            if (dictionary[word]) {
+                resultDiv.innerHTML = <b>Перевод:</b> ${dictionary[word].translation}<br><b>Транскрипция:</b> ${dictionary[word].transcription};
+            } else {
+                resultDiv.innerHTML = "Слово не найдено.";
+            }
+        }
+
+        // Добавление нового слова
+        document.getElementById('addWordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const word = document.getElementById('newWord').value.toLowerCase();
+            const translation = document.getElementById('newTranslation').value;
+            const transcription = document.getElementById('newTranscription').value;
+            
+            if (dictionary[word]) {
+                document.getElementById('message').textContent = "Это слово уже есть в словаре.";
+            } else {
+                dictionary[word] = { translation, transcription };
+                document.getElementById('message').textContent = "Слово добавлено!";
+            }
+
+            // Очищаем форму
+            document.getElementById('newWord').value = '';
+            document.getElementById('newTranslation').value = '';
+            document.getElementById('newTranscription').value = '';
+        });
+    </script>
+</body>
+</html>
