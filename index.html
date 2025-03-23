@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Перекладач</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .search-box {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+    .result {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Привет, Юра! 👋</h1>
+    <p>Напиши слово, которое хочешь перевести:</p>
+    <input type="text" id="searchInput" class="search-box" placeholder="Введите слово..." oninput="translateWord()">
+    <div id="result" class="result"></div>
+    <div class="footer">
+      <p>Примечание: Этот сайт предназначен для мобильных устройств 📱.</p>
+    </div>
+  </div>
+
+  <script>
+    // Словарь для перевода слов
+    const dictionary = {
+      "собака": { 
+        "translation": "dog", 
+        "transcription": "/dɒɡ/" 
+      },
+      "кот": { 
+        "translation": "cat", 
+        "transcription": "/kæt/" 
+      },
+      "яблоко": { 
+        "translation": "apple", 
+        "transcription": "/ˈæpl/" 
+      },
+      // Добавьте больше слов по вашему желанию
+    };
+
+    function translateWord() {
+      const word = document.getElementById("searchInput").value.toLowerCase();
+      const resultElement = document.getElementById("result");
+
+      if (dictionary[word]) {
+        const translation = dictionary[word].translation;
+        const transcription = dictionary[word].transcription;
+        resultElement.innerHTML = Перевод: <b>${translation}</b> <br>Транскрипция: <b>${transcription}</b>;
+      } else {
+        resultElement.innerHTML = "Слово не найдено. Попробуйте другое.";
+      }
+    }
+  </script>
+</body>
+</html>
