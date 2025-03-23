@@ -1,0 +1,82 @@
+/* Стилі для всього сайту */
+body {
+    font-family: 'Comic Sans MS', sans-serif; /* Мультяшний шрифт */
+    background-color: #f4c6ff; /* Колір фону за замовчуванням */
+    color: #333; /* Колір тексту за замовчуванням */
+    text-align: center;
+    padding: 30px;
+    margin: 0;
+}
+
+/* Контейнер для контенту */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 3px solid #f4b0a1;
+}
+
+/* Заголовки */
+h1 {
+    font-size: 36px;
+    color: #ff6f6f;
+    margin-bottom: 10px;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+h2, h3 {
+    font-size: 24px;
+    color: #ff6f6f;
+}
+
+/* Параграфи */
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Стиль для полів введення */
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    font-size: 18px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Кнопка для пошуку */
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff6f6f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ff4f4f;
+}
+
+/* Результат пошуку */
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e7e7e7;
+    border-radius: 5px;
+}
+
+/* Повідомлення про успіх або помилку */
+.message {
+    font-size: 18px;
+    color: green;
+    margin-top: 20px;
+}
+
+/* Форма для дод
