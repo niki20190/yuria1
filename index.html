@@ -1,0 +1,77 @@
+{ word: "сезон", translation: "season" },
+      { word: "зима", translation: "winter" },
+      { word: "літо", translation: "summer" },
+      { word: "весна", translation: "spring" },
+      { word: "осінь", translation: "autumn" },
+      { word: "робота", translation: "work" },
+      { word: "відпустка", translation: "vacation" },
+      { word: "свято", translation: "holiday" },
+      { word: "погода", translation: "weather" },
+      // Додавайте до 1000 слів тут
+      { word: "село", translation: "village" },
+      { word: "місто", translation: "city" },
+      { word: "район", translation: "district" },
+      { word: "вулиця", translation: "street" },
+      { word: "площа", translation: "square" },
+      { word: "паркінг", translation: "parking" },
+      { word: "магазин", translation: "store" },
+      { word: "ресторан", translation: "restaurant" },
+      { word: "кафе", translation: "cafe" },
+      { word: "відпочинок", translation: "relaxation" },
+      { word: "спорт", translation: "sport" },
+      { word: "гра", translation: "game" },
+      { word: "комп'ютер", translation: "computer" },
+      { word: "телефон", translation: "phone" },
+      { word: "планшет", translation: "tablet" },
+      { word: "телевізор", translation: "television" },
+      { word: "письмо", translation: "letter" },
+      { word: "завдання", translation: "task" },
+      { word: "письменник", translation: "writer" },
+      { word: "поет", translation: "poet" },
+      { word: "спортсмен", translation: "athlete" },
+      { word: "сім'я", translation: "family" },
+      { word: "діти", translation: "children" },
+      { word: "школяр", translation: "schoolboy" },
+      { word: "дитина", translation: "child" },
+      { word: "учень", translation: "student" },
+      { word: "студент", translation: "student" },
+      { word: "вчений", translation: "scientist" },
+      { word: "фізик", translation: "physicist" },
+      { word: "хімік", translation: "chemist" },
+      { word: "математик", translation: "mathematician" },
+      { word: "лікар", translation: "doctor" },
+      { word: "фармацевт", translation: "pharmacist" },
+      { word: "психолог", translation: "psychologist" },
+      { word: "містечко", translation: "town" },
+      { word: "клуб", translation: "club" },
+      { word: "спільнота", translation: "community" },
+      { word: "фестиваль", translation: "festival" },
+      { word: "подія", translation: "event" },
+      { word: "підтримка", translation: "support" },
+      { word: "допомога", translation: "help" }
+      // Продовжіть до 1000
+    ];
+
+    // Функція для відображення слів і перекладів
+    function displayWords() {
+      const tableBody = document.getElementById("wordsTable");
+      words.forEach((wordPair) => {
+        const row = document.createElement("tr");
+
+        const wordCell = document.createElement("td");
+        wordCell.textContent = wordPair.word;
+        row.appendChild(wordCell);
+
+        const translationCell = document.createElement("td");
+        translationCell.textContent = wordPair.translation;
+        row.appendChild(translationCell);
+
+        tableBody.appendChild(row);
+      });
+    }
+
+    // Викликаємо функцію для відображення слів при завантаженні сторінки
+    window.onload = displayWords;
+  </script>
+</body>
+</html>
