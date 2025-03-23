@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Безкоштовний Перекладач та Вимова</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Безкоштовний Перекладач та Вимова</h1>
+  </header>
+
+  <div class="content">
+    <input type="text" id="wordInput" placeholder="Введіть слово" />
+    <button onclick="getPronunciation()">Отримати вимову</button>
+    
+    <div id="result">
+      <p id="translation">Переклад: </p>
+      <p id="phonetic">Транскрипція: </p>
+      <audio id="audioPlayer" controls></audio>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
